@@ -1,0 +1,307 @@
+freq: 1000
+use_sim_handles: False
+sub_joy_start_name: /start_control
+sub_joy_zero_name: /zero_mode
+sub_joy_stand_name: /stand_mode
+sub_joy_work_name: /walk_mode
+sub_joy_keep_name: /keep_mode
+
+sub_joy_wave_hand_name: /wave_hand_mode
+sub_joy_shake_hand_name: /shake_hand_mode
+sub_joy_waist_wave_hand_name: /waist_wave_hand_mode
+sub_joy_vel_name: /cmd_vel
+sub_imu_data_name: /imu/data
+sub_joint_state_name: /joint_states
+pub_joint_cmd_name: /joint_cmd
+
+control_conf:
+  joy_vel:
+    cmd_vel:
+      max_line_vel_x: 0.8
+      max_line_vel_y: 0.5
+      max_angle_vel_z: 0.4
+  joint_conf:
+    # target angles [rad] when action = 0.0
+    init_state:
+      # leg
+      left_hip_pitch_joint: 0.4
+      left_hip_roll_joint: 0.05
+      left_hip_yaw_joint: -0.31
+      left_knee_pitch_joint: 0.49
+      left_ankle_pitch_joint: -0.21
+      left_ankle_roll_joint: -0.0
+      
+      right_hip_pitch_joint: -0.4
+      right_hip_roll_joint: -0.05
+      right_hip_yaw_joint: 0.31
+      right_knee_pitch_joint: 0.49
+      right_ankle_pitch_joint: -0.21
+      right_ankle_roll_joint: 0.0
+
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 0.0
+
+      # arm
+      left_shoulder_pitch_joint: 0.2
+      left_shoulder_roll_joint: 0.1
+      left_shoulder_yaw_joint: 0.0
+      left_elbow_pitch_joint: -0.3
+      left_elbow_yaw_joint: 0.0
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.5
+
+      right_shoulder_pitch_joint: 0.2
+      right_shoulder_roll_joint: -0.1
+      right_shoulder_yaw_joint: 0.0
+      right_elbow_pitch_joint: -0.3
+      right_elbow_yaw_joint: 0.0
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.5
+
+    # 蹲下关节角
+    squat_state:
+      # leg
+      left_hip_pitch_joint:   0.967344     
+      left_hip_roll_joint:    0.297031     
+      left_hip_yaw_joint:     -0.64422     
+      left_knee_pitch_joint:  1.36218    
+      left_ankle_pitch_joint: -0.560048 
+      left_ankle_roll_joint:  -0.000251008
+
+      right_hip_pitch_joint:    -0.967346  
+      right_hip_roll_joint:     -0.29703   
+      right_hip_yaw_joint:      0.64422    
+      right_knee_pitch_joint:   1.36218   
+      right_ankle_pitch_joint:  -0.560048 
+      right_ankle_roll_joint:   0.000250433
+        
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 0.0
+
+      # arm
+      left_shoulder_pitch_joint: 0.2
+      left_shoulder_roll_joint: 0.1
+      left_shoulder_yaw_joint: 0.0
+      left_elbow_pitch_joint: -0.3
+      left_elbow_yaw_joint: 0.0
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.5
+
+      right_shoulder_pitch_joint: 0.2
+      right_shoulder_roll_joint: -0.1
+      right_shoulder_yaw_joint: 0.0
+      right_elbow_pitch_joint: -0.3
+      right_elbow_yaw_joint: 0.0
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.5
+
+
+
+    # WALK PD Drive parameters:
+    stiffness:
+      # leg
+      left_hip_pitch_joint: 60.
+      left_hip_roll_joint: 60.
+      left_hip_yaw_joint: 35. #40.
+      left_knee_pitch_joint: 80. #70.
+      left_ankle_pitch_joint: 40.
+      left_ankle_roll_joint: 30.
+
+      right_hip_pitch_joint: 60.
+      right_hip_roll_joint: 60.
+      right_hip_yaw_joint: 35. #40.
+      right_knee_pitch_joint: 80. #70.
+      right_ankle_pitch_joint: 40.
+      right_ankle_roll_joint: 30.
+
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 300.0
+
+      # arm
+      left_shoulder_pitch_joint: 10.
+      left_shoulder_roll_joint: 100.0
+      left_shoulder_yaw_joint: 100.0
+      left_elbow_pitch_joint: 100.0 
+      left_elbow_yaw_joint: 100.0
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.0
+      
+      right_shoulder_pitch_joint: 10.
+      right_shoulder_roll_joint: 100.0
+      right_shoulder_yaw_joint: 100.0
+      right_elbow_pitch_joint: 100.0 
+      right_elbow_yaw_joint: 100.0
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.0
+
+    damping: 
+      # leg
+      left_hip_pitch_joint: 5. #6.
+      left_hip_roll_joint: 5. #6.
+      left_hip_yaw_joint: 5. #6.
+      left_knee_pitch_joint: 6. #7.
+      left_ankle_pitch_joint: 2.
+      left_ankle_roll_joint: 2.
+
+      right_hip_pitch_joint: 5. #6.
+      right_hip_roll_joint: 5. #6.
+      right_hip_yaw_joint: 5. #6.
+      right_knee_pitch_joint: 6. #7.
+      right_ankle_pitch_joint: 2
+      right_ankle_roll_joint: 2.
+
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 5.0
+
+      # arm
+      left_shoulder_pitch_joint: 3.0
+      left_shoulder_roll_joint: 5.0
+      left_shoulder_yaw_joint: 5.0
+      left_elbow_pitch_joint: 5.0 
+      left_elbow_yaw_joint: 5.0
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.0
+
+      right_shoulder_pitch_joint: 3.0
+      right_shoulder_roll_joint: 5.0
+      right_shoulder_yaw_joint: 5.0
+      right_elbow_pitch_joint: 5.0 
+      right_elbow_yaw_joint: 5.0
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.0
+    
+    # STAND PD Drive parameters:
+    stand_stiffness:
+      # leg
+      left_hip_pitch_joint: 300.0
+      left_hip_roll_joint: 300.0
+      left_hip_yaw_joint: 300.0
+      left_knee_pitch_joint: 300.0
+      left_ankle_pitch_joint: 300.0 # 0.1
+      left_ankle_roll_joint: 300.0 # 0.1
+
+      right_hip_pitch_joint: 300.0
+      right_hip_roll_joint: 300.0
+      right_hip_yaw_joint: 300.0
+      right_knee_pitch_joint: 300.0
+      right_ankle_pitch_joint: 300.0 # 0.1
+      right_ankle_roll_joint: 300.0 # 0.1
+
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 300.0
+
+      # arm
+      left_shoulder_pitch_joint: 80.0
+      left_shoulder_roll_joint: 80.0
+      left_shoulder_yaw_joint: 80.0
+      left_elbow_pitch_joint: 80.0 
+      left_elbow_yaw_joint: 80.0
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.0
+      
+      right_shoulder_pitch_joint: 80.0
+      right_shoulder_roll_joint: 80.0
+      right_shoulder_yaw_joint: 80.0
+      right_elbow_pitch_joint: 80.0 
+      right_elbow_yaw_joint: 80.0
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.0
+
+    stand_damping: 
+      # leg
+      left_hip_pitch_joint: 5.0
+      left_hip_roll_joint: 5.0
+      left_hip_yaw_joint: 5.0
+      left_knee_pitch_joint: 5.0
+      left_ankle_pitch_joint: 5.0 # 0.1
+      left_ankle_roll_joint: 5.0 # 0.1
+      
+
+      right_hip_pitch_joint: 5.0
+      right_hip_roll_joint: 5.0
+      right_hip_yaw_joint: 5.0
+      right_knee_pitch_joint: 5.0
+      right_ankle_pitch_joint: 5.0 # 0.1
+      right_ankle_roll_joint: 5.0 # 0.1
+
+      # lumbar
+      lumbar_roll_joint: 0.0
+      lumbar_pitch_joint: 0.0
+      lumbar_yaw_joint: 5.0
+
+      # arm
+      left_shoulder_pitch_joint: 1.5
+      left_shoulder_roll_joint: 1.5
+      left_shoulder_yaw_joint: 1.5
+      left_elbow_pitch_joint: 1.5 
+      left_elbow_yaw_joint: 1.5
+
+      left_wrist_pitch_joint: 0.0
+      left_wrist_roll_joint: 0.0
+      left_claw_joint: 0.0
+
+      right_shoulder_pitch_joint: 1.5
+      right_shoulder_roll_joint: 1.5
+      right_shoulder_yaw_joint: 1.5
+      right_elbow_pitch_joint: 1.5 
+      right_elbow_yaw_joint: 1.5
+
+      right_wrist_pitch_joint: 0.0
+      right_wrist_roll_joint: 0.0
+      right_claw_joint: 0.0
+
+  walk_step_conf:
+    action_scale: 0.5    # 推理的增量结果，缩放系数
+    decimation: 10       # 采样间隔
+    cycle_time: 0.7     # 步态周期
+    sw_mode: True #True        # 原地步态是否接受周期波函数
+    cmd_threshold: 0.05
+
+  obs_scales:
+    lin_vel: 2.
+    ang_vel: 1.
+    dof_pos: 1.
+    dof_vel: 0.05
+    quat: 1.
+
+  onnx_conf:
+
+    policy_file: cfg/rl_control_module/policy/model4.onnx
+
+    actions_size: 14
+    lumbar_size: 3
+    arm_size: 10
+    observations_size: 53
+    num_hist: 66
+    observations_clip: 100.
+    actions_clip: 100.
